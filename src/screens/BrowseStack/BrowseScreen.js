@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Alert, TouchableOpacity } from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 
 function BrowseScreen({navigation}) {
   return (
@@ -8,14 +8,16 @@ function BrowseScreen({navigation}) {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'white',
+        backgroundColor: 'steelblue',
       }}>
       <Text> Welcome</Text>
-      <TouchableOpacity onPress={()=>navigation.navigate('Category')} style={{marginVertical: 10}}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Category')}
+        style={{marginVertical: 10}}>
         <Text>Click to go to Category Screen.</Text>
       </TouchableOpacity>
     </View>
-  )
+  );
 }
 
 export default BrowseScreen;
