@@ -1,10 +1,12 @@
 import React from 'react';
 import {View, Text} from 'react-native';
+import {useSelector} from 'react-redux';
 
-function CategoryScreen({navigation}) {
+function CategoryScreen() {
+  const value = useSelector((state) => state.browser.value);
   return (
     <View>
-      <Text>Places will be displayed here!</Text>
+      <Text>{`You entered this value: ${value}`}</Text>
     </View>
   );
 }

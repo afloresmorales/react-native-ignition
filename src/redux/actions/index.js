@@ -1,0 +1,8 @@
+import {actionTypes} from '../constants/actionTypes';
+
+export function saveValue(value) {
+  return {
+    type: actionTypes.SAVE_VALUE,
+    value,
+  };
+}
