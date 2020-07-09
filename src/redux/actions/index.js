@@ -6,3 +6,8 @@ export function saveValue(value) {
     value,
   };
 }
+export function getMovies() {
+  return {
+    type: actionTypes.GET_MOVIES,
+  };
+}

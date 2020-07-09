@@ -1,12 +1,19 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, Text, TouchableOpacity, TextInput} from 'react-native';
 import {isEmpty} from 'ramda';
-import {saveValue} from '../../redux/actions';
-import {useDispatch} from 'react-redux';
+import {saveValue, getMovies} from '../../redux/actions';
+import {useDispatch, useSelector} from 'react-redux';
 
 function BrowseScreen({navigation}) {
   const [value, setValue] = useState('');
+  const movies = useSelector((state) => state.movies);
+  console.log(movies);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getMovies());
+  }, [dispatch]);
+
   const navigateToCategory = () => {
     dispatch(saveValue(value));
     navigation.navigate('Category');
