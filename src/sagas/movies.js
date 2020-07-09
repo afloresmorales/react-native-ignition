@@ -8,7 +8,7 @@ function* fetchMovies() {
     const result = yield browserServices.getMovies();
     yield put({type: actionTypes.GET_MOVIES_SUCCESS, movies: result.movies});
   } catch (e) {
-    yield put({type: 'GET_MOVIES_FAIL', movies: []});
+    yield put({type: actionTypes.GET_MOVIES_FAIL, movies: []});
   }
 }
 /*
